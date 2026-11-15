@@ -33,7 +33,7 @@ async function seedAdmin() {
   if (!ADMIN_EMAIL || !ADMIN_PASSWORD) return;
   if (await User.findOne({ email: ADMIN_EMAIL.toLowerCase() })) return;
   await User.create({ email: ADMIN_EMAIL, password: await bcrypt.hash(ADMIN_PASSWORD, 10) });
-  console.log(`Admin new created: ${ADMIN_EMAIL}`);
+  console.log(`Admin created: ${ADMIN_EMAIL}`);
 }
 
 (async () => {
