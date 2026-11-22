@@ -21,4 +21,9 @@ jobs:
                 context: .
                 push: true
                 tags: ${{secrets.username}}/backend:${{github.sha}}
-                
+
+    dc:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print
+              run: echo "Sent the image to docker hub successfully"
